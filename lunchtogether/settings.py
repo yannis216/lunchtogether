@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lunch',
+    'bootstrap3_datetime',
 ]
 
 MIDDLEWARE_CLASSES = [

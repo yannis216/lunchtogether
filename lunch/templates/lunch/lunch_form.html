@@ -1,0 +1,28 @@
+{% extends 'lunch/base.html' %}
+{% block content %}
+      Just tell us when and where you want to go for lunch. </br> We will send you and your matched lunch partner an email as soon as we matched you! </br></br>
+          <form method="POST" class="lunchrequest-form">{% csrf_token %}
+            <div class="fieldWrapper">
+                {{ form.user.errors }}
+                <label for="{{ form.user.id_for_label }}">What is your name?</label></br>
+                  {{ form.user }}
+              </div>
+              <div class="fieldWrapper">
+                {{ form.place.errors }}
+                <label for="{{ form.place.id_for_label }}">Where do you want to have lunch?</label></br>
+                {{ form.place }}
+              </div>
+              <div class="fieldWrapper">
+                {{ form.time.errors }}
+                <label for="{{ form.time.id_for_label }}">When do you want to have lunch?</label></br>
+                {{ form.time }}
+              </div>
+              <div class="fieldWrapper">
+                {{ form.email.errors }}
+                <label for="{{ form.email.id_for_label }}">What is your email address?</label></br>
+                {{ form.email }}
+              </div>
+              <button type="submit" class="save btn btn-default" id="savelunchbutton">Save Lunch</button>
+          </form>
+
+{% endblock %}
