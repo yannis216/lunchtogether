@@ -1,21 +1,46 @@
 {% extends 'lunch/base.html' %}
 {% block content %}
-      Just tell us when and where you want to go for lunch. </br> We will send you and your matched lunch partner an email as soon as we matched you! </br></br>
+      Just tell us a little bit about you and your ideal lunch partner </br> We will go through the entries every sunday and send you a contact as soon as we find a good match! </br></br>
           <form method="POST" class="lunchrequest-form">{% csrf_token %}
-            <div class="fieldWrapper">
+              <div class="fieldWrapper">
                 {{ form.user.errors }}
                 <label for="{{ form.user.id_for_label }}">What is your name?</label></br>
                   {{ form.user }}
               </div>
-              <div class="fieldWrapper">
+              <!--<div class="fieldWrapper">
                 {{ form.place.errors }}
                 <label for="{{ form.place.id_for_label }}">Where do you want to have lunch?</label></br>
                 {{ form.place }}
               </div>
               <div class="fieldWrapper">
                 {{ form.time.errors }}
-                <label for="{{ form.time.id_for_label }}">When do you want to have lunch?</label></br>
+                <label for="{{ form.time.id_for_label }}">When do you want to have lunch? </br>We will try to find someone who is hungry +- 15mins of your preferred time.</label></br>
                 {{ form.time }}
+              </div> -->
+              <div class="fieldWrapper">
+                {{ form.university.errors }}
+                <label for="{{ form.university.id_for_label }}">Which is your university?</label></br>
+                  {{ form.university }}
+              </div>
+              <div class="fieldWrapper">
+                {{ form.yoursubject.errors }}
+                <label for="{{ form.yoursubject.id_for_label }}">What is your subject?</label></br>
+                  {{ form.yoursubject }}
+              </div>
+              <div class="fieldWrapper">
+                {{ form.spokenlanguages.errors }}
+                <label for="{{ form.spokenlanguages.id_for_label }}">Which languages do you speak?</label></br>
+                  {{ form.spokenlanguages }}
+              </div>
+              <div class="fieldWrapper">
+                {{ form.aboutyou.errors }}
+                <label for="{{ form.aboutyou.id_for_label }}">Tell us something about you. We can make a better match for you the more you tell. What inspires you?</label></br>
+                  {{ form.aboutyou }}
+              </div>
+              <div class="fieldWrapper">
+                {{ form.lunchpreference.errors }}
+                <label for="{{ form.lunchpreference.id_for_label }}">What would make a lunchpartner interesting to you?</label></br>
+                  {{ form.lunchpreference }}
               </div>
               <div class="fieldWrapper">
                 {{ form.email.errors }}
